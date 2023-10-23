@@ -1,6 +1,10 @@
-package com.joirv.app.foro.model.entity;
+package com.joirv.app.foro.model.entity.topic;
 
 
+import com.joirv.app.foro.model.entity.Respuesta;
+import com.joirv.app.foro.model.entity.StatusTopico;
+import com.joirv.app.foro.model.entity.curs.Curso;
+import com.joirv.app.foro.model.entity.usuarios.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,15 +37,19 @@ public class Topico {
     @Column(name = "status_topico")
     private StatusTopico status = StatusTopico.NO_RESPONDIDO;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "autor_id")
     private Usuario autor;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "curso_id")
     private Curso curso;
 
     @OneToMany
     @JoinColumn(name = "respuestas_id")
     private List<Respuesta> respuesta = new ArrayList<>();
+
+
+
+
 }

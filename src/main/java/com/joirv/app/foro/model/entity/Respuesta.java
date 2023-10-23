@@ -1,6 +1,8 @@
 package com.joirv.app.foro.model.entity;
 
 
+import com.joirv.app.foro.model.entity.topic.Topico;
+import com.joirv.app.foro.model.entity.usuarios.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.joirv.app.foro.model.entity;
+package com.joirv.app.foro.model.entity.curs;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
